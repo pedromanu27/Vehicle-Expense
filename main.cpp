@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle("fusion");
 
     QPixmap pixmap(":/images/splash.jpg");
     QSplashScreen *splash = new QSplashScreen(pixmap);

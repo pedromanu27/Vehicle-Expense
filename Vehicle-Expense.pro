@@ -26,11 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        vehiclesdialog.cpp
 
 HEADERS += \
         mainwindow.h \
-        database.h
+        database.h \
+        vehiclesdialog.h
 
 FORMS += \
         mainwindow.ui

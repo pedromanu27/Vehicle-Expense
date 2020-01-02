@@ -7,7 +7,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class QLabel;
+class QMdiArea;
 
 class MainWindow : public QMainWindow
 {
@@ -17,9 +17,15 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionVeiculos_triggered();
+
 private:
     Ui::MainWindow *ui;
-    QLabel *statusLabel;
+    QMdiArea *mdiArea;
+
+    void readSettings();
+    void writeSettigns();
 };
 
 #endif // MAINWINDOW_H
