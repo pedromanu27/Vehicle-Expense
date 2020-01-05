@@ -14,12 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setCentralWidget(mdiArea);
 
-    QTabWidget *tabWidget = new QTabWidget(this);
-    tabWidget->addTab(new QTextEdit, "Editor");
-    tabWidget->addTab(new QWidget, "Abastecimentos");
-
-    mdiArea->addSubWindow(tabWidget);
-
     readSettings();
 }
 
@@ -60,6 +54,7 @@ void MainWindow::on_actionVeiculos_triggered()
     if (!vehicle)
     {
         vehicle = new VehiclesDialog(this);
+        connect(vehicle, SIGNAL(rejected()), mdiArea, SLOT(closeActiveSubWindow()));
         mdiArea->addSubWindow(vehicle);
         vehicle->show();
     }

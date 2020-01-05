@@ -51,3 +51,22 @@ else:unix: LIBS += -L$$PWD/libs/qcustomplot/lib/ -lqcustomplot2
 
 INCLUDEPATH += $$PWD/libs/qcustomplot/include
 DEPENDPATH += $$PWD/libs/qcustomplot/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/qsint/lib/ -lqsint
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/qsint/lib/ -lqsintd
+else:unix: LIBS += -L$$PWD/libs/qsint/lib/ -lqsint
+
+INCLUDEPATH += $$PWD/libs/qsint/include
+DEPENDPATH += $$PWD/libs/qsint/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/LimeReport/lib/ -llimereport
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/LimeReport/lib/ -llimereportd
+else:unix: LIBS += -L$$PWD/libs/LimeReport/lib/ -llimereport
+
+INCLUDEPATH += $$PWD/libs/LimeReport/include
+DEPENDPATH += $$PWD/libs/LimeReport/include
+
+DISTFILES += \
+    appicon.rc
+
+RC_FILE = appicon.rc
